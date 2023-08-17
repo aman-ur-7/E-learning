@@ -4,10 +4,10 @@ import FooterMain from "./Components/FooterMain";
 
 const MainPage = () => {
   return (
-    <>
+    <main className="main-page">
       <HeroSectionMain />
       <FooterMain />
-    </>
+    </main>
   );
 };
 

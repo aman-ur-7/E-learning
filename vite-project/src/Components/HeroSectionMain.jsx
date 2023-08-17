@@ -3,10 +3,9 @@ import HeaderMain from "./Header";
 
 const HeroSectionMain = () => {
   return (
-    <>
+    <section className="hero-section">
       <HeaderMain />
-      <div>hero section</div>
-    </>
+    </section>
   );
 };
 
