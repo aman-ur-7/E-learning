@@ -109,6 +109,11 @@ export const GlobalStyle = createGlobalStyle`
                 justify-content: space-around;
                 align-items: center;
 
+                &>div{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px;
+                }
 
                 &>:nth-child(1){
                     display: flex;
@@ -116,7 +121,7 @@ export const GlobalStyle = createGlobalStyle`
 
                     &>h1{
                         text-transform: uppercase;
-                        font-size: 34px;
+                        font-size: 40px;
                         font-weight: bold;
                     }
 
@@ -127,8 +132,7 @@ export const GlobalStyle = createGlobalStyle`
                         align-items: center;
 
                         &>p{
-                            font-size: 14px;
-                            letter-spacing: .5px;
+                            font-weight: 100;
                         }
 
                         .vertical-line{
@@ -136,12 +140,98 @@ export const GlobalStyle = createGlobalStyle`
                             height: 50px;
                         }
                     }
+
+                    .hero-buttons{
+                        display: flex;
+                        gap: 20px;
+
+                        &>:nth-child(1){
+                            background: #FFA337;
+                            padding: 8px;
+                            border-radius: 25px;
+                        }
+                        &>:nth-child(2){
+                            border: 2px solid black;
+                            color: black;
+                            padding: 8px;
+                            border-radius: 25px;
+                        }
+                    }
                 }
 
-                &>:nth-child(2){
+                .arrow-png{
 
+                    &>:nth-child(1){
+                        position: absolute;
+                        height: 24px;
+                        bottom: 180px;
+                        right: 380px;
+                    }
+                    &>:nth-child(2){
+                        position: absolute;
+                        height: 24px;
+                        top: 120px;
+                        right: 430px;
+                    }
+                    &>:nth-child(3){
+                        position: absolute;
+                        height: 45px;
+                        bottom: 210px;
+                        left: 410px;
+                    }
+                }
+
+                .hero-jpg{
+                    &>:nth-child(1){
+                    position: relative;
+                    height: 280px;
+                    z-index: 1;
+                }
+                
+                &>:nth-child(2){
+                    display: flex;
+                    justify-self: center;
+                    position: absolute;
+                    height: 280px;
+                    width: 320px;
+                    top: 100px;
+                    right: 60px;
+                    z-index: 2;
+                }
+                &>:nth-child(3){
+                    display: flex;
+                    justify-self: center;
+                    position: absolute;
+                    height: 280px;
+                    width: 320px;
+                    top: 110px;
+                    right: 60px;
+                    z-index: 0;
                 }
             }
+        }
+        }
+
+        footer{
+            background: #F1F2F8;
+            height: 20vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            &>div{ 
+
+            &>p{
+                width: 300px;
+            }
+
+            &>span{
+                font-size: 20px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            
+        }
         }
 
     }
