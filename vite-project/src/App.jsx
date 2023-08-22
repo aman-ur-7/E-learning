@@ -2,12 +2,12 @@ import React from "react";
 import MainPage from "./MainPage";
 import { Routes, Route } from "react-router-dom";
 import Login from "./auth/Login";
-import MainAuth from "./MainAuth";
-import Design from "./CourseCategory/Design";
-import Development from "./CourseCategory/Development";
-import LinkedIn from "./CourseCategory/LinkedIn";
+import Auth from "./Auth";
 import Business from "./CourseCategory/Business";
-import BugFixTeacher from "./CourseCategory/BugFixTeacher";
+import FrontEnd from "./CourseCategory/FrontEnd";
+import MernStack from "./CourseCategory/MernStack";
+import ReactJs from "./CourseCategory/ReactJs";
+import BugFix from "./CourseCategory/BugFix";
 
 const App = () => {
   return (
@@ -15,12 +15,12 @@ const App = () => {
       <Routes>
         <Route path="/*" element={<MainPage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<MainAuth />} />
-        <Route path="/design" element={<Design />} />
-        <Route path="/development" element={<Development />} />
-        <Route path="/linkedin" element={<LinkedIn />} />
+        <Route path="/signup" element={<Auth />} />
+        <Route path="/frontend" element={<FrontEnd />} />
+        <Route path="/backend" element={<MernStack />} />
+        <Route path="/reactjs" element={<ReactJs />} />
         <Route path="/business" element={<Business />} />
-        <Route path="/bugfixteacher" element={<BugFixTeacher />} />
+        <Route path="/bugfix" element={<BugFix />} />
       </Routes>
     </>
   );

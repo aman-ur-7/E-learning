@@ -1,12 +1,12 @@
 import React from "react";
-import HeroSectionMain from "./Components/HeroSectionMain";
-import FooterMain from "./Components/FooterMain";
+import HeroSectionMain from "./Components/MainPage/HeroSectionMain";
+import Footer from "./Components/MainPage/Footer";
 
 const MainPage = () => {
   return (
     <main className="main-page">
       <HeroSectionMain />
-      <FooterMain />
+      <Footer />
     </main>
   );
 };

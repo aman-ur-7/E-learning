@@ -4,11 +4,11 @@ import { NavLink } from "react-router-dom";
 const Instructor = () => {
   return (
     <>
-      <NavLink to="/design">Design</NavLink>
-      <NavLink to="/development">Development</NavLink>
-      <NavLink to="/linkedin">LinkedIn</NavLink>
+      <NavLink to="/frontend">FrontEnd</NavLink>
+      <NavLink to="/backend">MernStack</NavLink>
+      <NavLink to="/reactjs">ReactJs</NavLink>
       <NavLink to="/business">Business</NavLink>
-      <NavLink to="/bugfixteacher">BugFixTeacher</NavLink>
+      <NavLink to="/bugfix">BugFix</NavLink>
     </>
   );
 };

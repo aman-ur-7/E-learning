@@ -1,11 +1,11 @@
 import React from "react";
 import HeaderMain from "./Header";
-import menImage from "../assets/menImage.png";
-import menBorder from "../assets/menBorder.png";
-import menBackground from "../assets/menBackground.png";
-import Vector from "../assets/Vector.png";
-import Vector2 from "../assets/Vector2.png";
-import Union from "../assets/Union.png";
+import menImage from "../../assets/menImage.png";
+import menBorder from "../../assets/menBorder.png";
+import menBackground from "../../assets/menBackground.png";
+import Vector from "../../assets/Vector.png";
+import Vector2 from "../../assets/Vector2.png";
+import Union from "../../assets/Union.png";
 
 const HeroSectionMain = () => {
   return (

@@ -37,10 +37,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-App.post("/profile", upload.single("image"), function (req, res, next) {
-  // req.file is the `avatar` file
-  // req.body will hold the text fields, if there were any
-});
+App.post("/profile", upload.single("image"), function (req, res, next) {});
 //
 App.listen(PORT, () => {
   console.log("server is started");

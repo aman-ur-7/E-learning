@@ -1,5 +1,6 @@
 import React from "react";
 import { PiLockFill } from "react-icons/pi";
+import { NavLink } from "react-router-dom";
 
 const HeaderMain = () => {
   return (
@@ -16,11 +17,15 @@ const HeaderMain = () => {
           <span>contact</span>
         </div>
         <div className="auth-buttons">
-          <div>
-            <PiLockFill size={20} />
-            <button>login</button>
-          </div>
-          <button>sign up</button>
+          <NavLink to="/login" className="nav-link">
+            <div>
+              <PiLockFill size={20} />
+              <button>Login</button>
+            </div>
+          </NavLink>
+          <NavLink to="/signup">
+            <button>sign up</button>
+          </NavLink>
         </div>
       </div>
       <div className="clip-path"></div>

@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
             display: flex;
             flex-direction: column;
             background: #6176F7;
-            height: 78vh;
+            height: 76vh;
             gap: 50px;
             color: white;
 
@@ -77,24 +77,25 @@ export const GlobalStyle = createGlobalStyle`
                     display: flex;
                     gap: 30px;
 
-                    &>div{
+                .nav-link{
+                        &>div{
                         display: flex;
                         align-items: center;
                         gap: 6px;
+                        cursor: pointer;
 
-                        &>button{
-                            background: none;
-                            outline: none;
-                            border: none;
-
-                        }
-                        :active{
-                            color: orange;
-                        }
+                            &>button{
+                                background: none;
+                                outline: none;
+                                border: none;
+                            }
                     }
-
+                }
+                    :active{
+                        color: orange;
+                    }
+                    
                     button{
-                        
                         background:linear-gradient(#FFC27A, #FFA337);
                         border-radius: 15px;
                         padding: 2px 8px;
@@ -121,7 +122,7 @@ export const GlobalStyle = createGlobalStyle`
 
                     &>h1{
                         text-transform: uppercase;
-                        font-size: 40px;
+                        font-size: 35px;
                         font-weight: bold;
                     }
 
@@ -184,7 +185,7 @@ export const GlobalStyle = createGlobalStyle`
                 .hero-jpg{
                     &>:nth-child(1){
                     position: relative;
-                    height: 280px;
+                    height: 240px;
                     z-index: 1;
                 }
                 
@@ -192,20 +193,20 @@ export const GlobalStyle = createGlobalStyle`
                     display: flex;
                     justify-self: center;
                     position: absolute;
-                    height: 280px;
-                    width: 320px;
+                    height: 240px;
+                    width: 260px;
                     top: 100px;
-                    right: 60px;
+                    right: 90px;
                     z-index: 2;
                 }
                 &>:nth-child(3){
                     display: flex;
                     justify-self: center;
                     position: absolute;
-                    height: 280px;
-                    width: 320px;
+                    height: 240px;
+                    width: 250px;
                     top: 110px;
-                    right: 60px;
+                    right: 100px;
                     z-index: 0;
                 }
             }
@@ -215,7 +216,7 @@ export const GlobalStyle = createGlobalStyle`
         footer{
             padding: 10px;
             background: #F1F2F8;
-            height: 30vh;
+            height: 24vh;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -243,8 +244,100 @@ export const GlobalStyle = createGlobalStyle`
                 padding: 8px;
             }
         }
+
+            &>:nth-child(2)>:nth-child(1)
+            {
+            background-color: #1CD7AF;
+             }
+            &>:nth-child(3)>:nth-child(1)
+            {
+            background-color: #92DAF0;
+             }
+            &>:nth-child(4)>:nth-child(1)
+            {
+            background-color: #525BF1;
+             }
         }
 
+    }
+
+    .login{
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        
+    .image-section{
+        background-image: url('https://cdn.pixabay.com/photo/2020/05/15/19/37/book-5174879_1280.jpg');
+        background-position: center top;
+        padding: 20px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        
+        &>p
+        {
+            color: white;
+            font-size: 18px;
+        }
+        }
+
+        .login-form{
+            display: flex;
+            flex-direction: column;
+            background: #F1F2F8;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            padding: 20px;
+            gap: 50px;
+
+            &>h1{
+                font-size: 30px;
+                font-weight: bold;
+                text-transform: capitalize;
+                color: #375137;
+            }
+            &>h3{
+                font-size: 20px;
+                font-weight: bold;
+                text-transform: capitalize;
+                color: #b2d6b2;
+            }
+            
+            .login-inputs{
+                display: flex;
+                flex-direction:column;
+                gap: 16px;
+                align-items: start;
+                text-align: start;
+                color: #7e7e7e;
+
+                &>div{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+
+                    &>input{
+                        outline: none;
+                        border: none;
+                        background: none;
+                        border-bottom: 1px solid #afaeae;
+                    }
+                }
+            }
+            .form{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                &>button{
+                    border-radius: 22px;
+                    padding: 4px;
+                    background: #707970;
+                }
+            }
+        }
     }
 
 `;
