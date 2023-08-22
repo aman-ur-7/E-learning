@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
             display: flex;
             flex-direction: column;
             background: #6176F7;
-            height: 80vh;
+            height: 78vh;
             gap: 50px;
             color: white;
 
@@ -213,13 +213,18 @@ export const GlobalStyle = createGlobalStyle`
         }
 
         footer{
+            padding: 10px;
             background: #F1F2F8;
-            height: 20vh;
+            height: 30vh;
             display: flex;
             justify-content: space-around;
             align-items: center;
 
-            &>div{ 
+            &>div{
+                h1{
+                    font-size: 30px;
+                    text-transform: uppercase;
+                }
 
             &>p{
                 width: 300px;
@@ -231,6 +236,12 @@ export const GlobalStyle = createGlobalStyle`
                 font-weight: bold;
             }
             
+            .react-icons{
+                border-radius: 8px;
+                color: white;
+                size: 20px;
+                padding: 8px;
+            }
         }
         }
 

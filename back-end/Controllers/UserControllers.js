@@ -1,5 +1,6 @@
 const AuthModel = require("../Model/AuthSchema");
 const asyncHandler = require("express-async-handler");
+const ImageSchema = require("../Model/FileSchema");
 
 const registerUser = asyncHandler(async (req, res) => {
   try {
