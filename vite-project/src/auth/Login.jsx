@@ -1,7 +1,41 @@
-import React from "react";
-import aman from "../assets/aman.jpg";
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useData } from "../../src/DataContext";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { setDataFromLogin } = useData();
+
+  function refreshPage() {
+    window.location.reload(true);
+  }
+
+  const login = async (e) => {
+    e.preventDefault();
+    if (!email || !password) {
+      alert("fields are menditory");
+    }
+
+    try {
+      const loginResponse = await axios.post(
+        "http://localhost:7001/user/login",
+        { email, password }
+      );
+      if (loginResponse) {
+        setDataFromLogin(loginResponse);
+        navigate("/elearn", { replace: true });
+      }
+    } catch (error) {
+      alert("Your email and password is incorrect");
+      setTimeout(() => {
+        refreshPage();
+      }, 2000);
+    }
+  };
+
   return (
     <div className="login">
       <section className="image-section">
@@ -14,18 +48,26 @@ const Login = () => {
       <section className="login-form">
         <h1>E-learn</h1>
         <h3>Welcome to the login page</h3>
-        <form action="" className="form">
+        <form className="form" onSubmit={login}>
           <div className="login-inputs">
             <div>
               <span>User email</span>
-              <input type="email" placeholder="E-mail" />
+              <input
+                type="email"
+                placeholder="E-mail"
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
             <div>
               <span>User password</span>
-              <input type="password" placeholder="password" />
+              <input
+                type="password"
+                placeholder="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
           </div>
-          <button>submit</button>
+          <button type="submit">submit</button>
         </form>
       </section>
     </div>

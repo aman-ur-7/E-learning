@@ -4,12 +4,15 @@ import App from "./App.jsx";
 import { BrowserRouter as Router } from "react-router-dom";
 import { GlobalStyle } from "./GlobalStyle.jsx";
 import { ChakraProvider } from "@chakra-ui/react";
+import { DataProvider } from "../src/DataContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
-    <ChakraProvider>
-      <GlobalStyle />
-      <App />
-    </ChakraProvider>
+    <DataProvider>
+      <ChakraProvider>
+        <GlobalStyle />
+        <App />
+      </ChakraProvider>
+    </DataProvider>
   </Router>
 );

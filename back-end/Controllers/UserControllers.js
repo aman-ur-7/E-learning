@@ -45,7 +45,7 @@ const loginUser = asyncHandler(async (req, res) => {
     const userLogin = await AuthModel.findOne({ email, password });
     if (userLogin) {
       res.status(200).send(userLogin);
-    } else throw new Error();
+    } else res.status(400).send("password is incorrect");
   } catch (error) {
     console.log(error);
   }
