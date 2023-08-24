@@ -26,6 +26,7 @@ const Login = () => {
       );
       if (loginResponse) {
         setDataFromLogin(loginResponse);
+        localStorage.setItem("dataToPersist", JSON.stringify(loginResponse));
         navigate("/elearn", { replace: true });
       }
     } catch (error) {

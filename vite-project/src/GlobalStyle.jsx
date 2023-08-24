@@ -340,4 +340,81 @@ export const GlobalStyle = createGlobalStyle`
         }
     }
 
+    .landing-holder{
+        
+        .ladning-page{
+            padding: 10px 80px;
+            background: #6176F7;
+            height: 85vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+
+            .landing-header{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &>:nth-child(1){
+                    font-size: 25px;
+                    font-style: italic; 
+                    color: #FFC27A;
+
+                    &>span{
+                        font-size: 30px;
+                        color: white;
+                    }
+                }
+                
+                &>:nth-child(2){
+                    display: flex;
+                    align-items: center;
+                    gap: 50px;
+                    text-transform: capitalize;
+                }
+                &>:nth-child(3){
+                    position: absolute;
+                }
+                &>.landing-nav>button{
+                    padding: 5px;
+                    color: white;
+                    border-radius: 23px;
+                    background: linear-gradient(0deg, rgba(255,163,55,1) 0%, rgba(255,194,122,1) 100%);
+                    width: 100px;
+                }
+            }
+
+            .landing-content{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                justify-content: center;
+
+                .landing-about{
+                    h3{
+                        color: #FFC27A;
+                    }
+
+                    h1{
+                        font-size: 34px;
+                    }
+                    p{
+                        color: #ffffff85;
+                    }
+                }
+
+                .landing-image{
+                    border: 1px solid red;
+
+                    &>img{
+                        height: 300px;
+                        position: relative;
+                        margin: auto;
+                    }
+                }
+            }
+        }
+    }
+
 `;
