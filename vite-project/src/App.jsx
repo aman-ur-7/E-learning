@@ -9,6 +9,7 @@ import MernStack from "./CourseCategory/MernStack";
 import ReactJs from "./CourseCategory/ReactJs";
 import BugFix from "./CourseCategory/BugFix";
 import ElearnPage from "./ElearnPage";
+import Ai from "./Ai";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/reactjs" element={<ReactJs />} />
         <Route path="/business" element={<Business />} />
         <Route path="/bugfix" element={<BugFix />} />
+        <Route path="/ai" element={<Ai />} />
       </Routes>
     </>
   );

@@ -406,7 +406,7 @@ export const GlobalStyle = createGlobalStyle`
 
                 .landing-image{
                     border: 1px solid red;
-
+                    
                     &>img{
                         height: 300px;
                         position: relative;
