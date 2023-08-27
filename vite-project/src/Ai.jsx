@@ -3,46 +3,44 @@ import axios from "axios";
 
 const Ai = () => {
   const [query, setQuery] = useState("");
-  const [response, setResponse] = useState("");
+  const [result, setResult] = useState([]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const fetchApi = async () => {
+    const apiKey = "AIzaSyBgLKBYfzZsBzmHIzF_eXO6VGF7DjGSgJM"; // Replace with your API key
+    const searchEngineId = "839b85261ff3d4c95"; // Replace with your custom search engine ID
+
     try {
-      const apiKey = "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";
-      const response = await axios.post(
-        "https://api.openai.com/v1/engines/davinci/completions",
+      const response = await axios.get(
+        "https://www.googleapis.com/customsearch/v1",
         {
-          prompt: query,
-          max_tokens: 200, // Adjust as needed
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${apiKey}`,
+          params: {
+            key: apiKey,
+            cx: searchEngineId,
+            q: query, // Use the user's query
           },
         }
       );
-      setResponse(response.data.choices[0].text);
+
+      setResult(response.data.items || []);
     } catch (error) {
-      console.error("Error fetching response:", error);
+      console.error("Error fetching search results:", error);
     }
   };
 
   return (
     <div>
-      <h1>Chat with ChatGPT</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="write"
-        />
-        <button type="submit">Send</button>
-      </form>
-      <div>
-        <h1>{response}</h1>
-      </div>
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Enter search query"
+      />
+      <button onClick={fetchApi}>Fetch Results</button>
+      <ul>
+        {result.map((result) => (
+          <li key={result.cacheId}>{result.title}</li>
+        ))}
+      </ul>
     </div>
   );
 };

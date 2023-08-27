@@ -1,8 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import slay from "../assets/Saly-10.png";
+import { BsFillMicFill } from "react-icons/bs";
+import { BiSearch } from "react-icons/bi";
 
 const LandingPage = () => {
+  const mic = () => {};
+  const search = () => {};
+
   return (
     <div className="ladning-page">
       <section className="landing-header">
@@ -32,7 +37,19 @@ const LandingPage = () => {
             Various versions have evolved over the years, sometimes by accident,
           </p>
           <div className="search-bar">
-            <input type="text" />
+            <input type="text" placeholder="Search" />
+            <BsFillMicFill
+              onClick={mic}
+              className="mic"
+              color="grey"
+              size={33}
+            />
+            <BiSearch
+              onClick={search}
+              className="search"
+              color="white"
+              size={33.5}
+            />
           </div>
         </div>
         <div className="landing-image">
