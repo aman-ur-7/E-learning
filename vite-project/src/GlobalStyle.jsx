@@ -452,4 +452,37 @@ export const GlobalStyle = createGlobalStyle`
         }
     }
 
+    .number-counts{
+        height: 15vh;
+        background: #F1F2F8;
+        display: flex;
+        align-items: center;
+        padding: 0px 80px;
+        justify-content: space-between;
+
+        &>div{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+    .about-page{
+        padding: 40px 80px;
+        display: flex;
+        flex-direction: column;
+
+        &>:nth-child(1){
+
+        &>h1{
+            font-size: 30px;
+            font-weight: 700;
+            
+        &>span{
+            color: #3461FD;
+        }
+        }
+    }
+    }
+
 `;
