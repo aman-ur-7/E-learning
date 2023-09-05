@@ -459,11 +459,45 @@ export const GlobalStyle = createGlobalStyle`
         align-items: center;
         padding: 0px 80px;
         justify-content: space-between;
+        gap: 20px;
 
         &>div{
             display: flex;
             align-items: center;
             gap: 10px;
+
+            &>div>span{
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+
+        &>:nth-child(1)>:nth-child(1){
+                padding: 10px;
+                border-radius: 30px;
+                background: linear-gradient(180deg, #2AF9B1 0%, #20B486 100%);
+                color: white;
+        }
+
+        &>:nth-child(2)>:nth-child(1){
+                padding: 10px;
+                border-radius: 30px;
+                background: linear-gradient(180deg, #A988F9 0%, #6D3AE9 100%);
+                color: white;
+        }
+
+        &>:nth-child(3)>:nth-child(1){
+                padding: 10px;
+                border-radius: 30px;
+                background: linear-gradient(180deg, #FFA4AF 0%, #EE455A 100%);
+                color: white;
+        }
+
+        &>:nth-child(4)>:nth-child(1){
+                padding: 10px;
+                border-radius: 30px;
+                background: linear-gradient(180deg, #92DAF0 0%, #21C9FF 100%);
+                color: white;
         }
     }
 
