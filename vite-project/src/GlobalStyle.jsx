@@ -504,6 +504,7 @@ export const GlobalStyle = createGlobalStyle`
     .about-page{
         padding: 40px 80px;
         display: flex;
+        gap: 50px;
         flex-direction: column;
 
         &>:nth-child(1){
