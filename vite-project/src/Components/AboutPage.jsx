@@ -2,6 +2,9 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import "swiper/css";
+import "swiper/css";
+// import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const AboutPage = () => {
   return (
@@ -19,17 +22,77 @@ const AboutPage = () => {
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
-          slidesPerView={3}
+          slidesPerView={4}
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
+          // onSwiper={(swiper) => console.log(swiper)}
         >
-          <SwiperSlide>Slide 1</SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
+          <SwiperSlide>
+            <section>
+              <div>
+                <span>Front-end</span>
+                <img src="../src/assets/Saly-1.png" alt="" />
+              </div>
+              <div>
+                <p>Various version's are evolve </p>
+              </div>
+              <hr />
+              <span>Free</span>
+            </section>
+          </SwiperSlide>
+          <SwiperSlide>
+            <section>
+              <div>
+                <span>Bug-Fix</span>
+                <img src="../src/assets/Saly-2.png" alt="" />
+              </div>
+              <div>
+                <p>Various version's are evolve </p>
+              </div>
+              <hr />
+              <span>Free</span>
+            </section>
+          </SwiperSlide>
+          <SwiperSlide>
+            <section>
+              <div>
+                <span>React.js</span>
+                <img src="../src/assets/Saly-3.png" alt="" />
+              </div>
+              <div>
+                <p>Various version's are evolve </p>
+              </div>
+              <hr />
+              <span>Free</span>
+            </section>
+          </SwiperSlide>
+          <SwiperSlide>
+            <section>
+              <div>
+                <span>MERN Stack</span>
+                <img src="../src/assets/Saly-4.png" alt="" />
+              </div>
+              <div>
+                <p>Various version's are evolve </p>
+              </div>
+              <hr />
+              <span>Free</span>
+            </section>
+          </SwiperSlide>
+          <SwiperSlide>
+            <section>
+              <div>
+                <span>Business</span>
+                <img src="../src/assets/Saly-4.png" alt="" />
+              </div>
+              <div>
+                <p>Various version's are evolve </p>
+              </div>
+              <hr />
+              <span>Free</span>
+            </section>
+          </SwiperSlide>
         </Swiper>
       </div>
     </div>

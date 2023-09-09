@@ -518,6 +518,40 @@ export const GlobalStyle = createGlobalStyle`
         }
         }
     }
+
+    .swiper{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
     }
+    .swiper-slide{ 
+        padding: 30px;
+
+        &>section{
+            height: 260px;
+            width: 200px;
+            padding: 10px;
+            background: #FFFFFF;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.13), 0 13px 16px rgba(0, 0, 0, 0.107);
+
+
+        &>:nth-child(1)>span{
+            position: absolute;
+            background: #ffffff6c;
+            margin: 3px;
+            padding: 3px;
+            border-radius: 8px;
+        }
+    }
+    }
+
+    .swiper-pagination-bullet-active{
+        background: #FFC27A;
+    }
+}
 
 `;
