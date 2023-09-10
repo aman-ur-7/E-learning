@@ -554,4 +554,76 @@ export const GlobalStyle = createGlobalStyle`
     }
 }
 
+.auth-page{
+    height: 100vh;
+    flex-wrap: wrap;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .chakra-tabs{
+        margin: auto;
+        width: 50%;
+        padding: 30px;
+        background: #00000512;
+    }
+}
+
+.sign-up{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+
+    &>h1{
+        font-size: 20px;
+        font-weight: 600;
+        color: #7dab7d;
+    }
+
+    &>form{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+
+        &>section{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            &>div{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        .eye-display{
+            display: flex;
+            align-items: center;
+
+            &>span{
+                cursor: pointer;
+            }
+        }
+
+        input{
+            border: none;
+            outline: none;
+            background: none;
+            border-bottom: 1px solid black;
+        }
+
+        button{
+            background: #64d764;;
+            padding: 5px 10px;
+            border-radius: 22px;
+        }
+        span{
+            color: #000000ac;
+        }
+    }
+}
+
+
 `;
