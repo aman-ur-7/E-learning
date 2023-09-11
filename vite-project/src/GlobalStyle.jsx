@@ -560,12 +560,18 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    background-image: url('https://cdn.pixabay.com/photo/2020/05/15/19/37/book-5174879_1280.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 30px;
+
 
     .chakra-tabs{
         margin: auto;
-        width: 50%;
+        width: 35%;
         padding: 30px;
-        background: #00000512;
+        background: #ffffff12;
+        border-radius: 15px;
     }
 }
 
@@ -623,6 +629,23 @@ export const GlobalStyle = createGlobalStyle`
             color: #000000ac;
         }
     }
+}
+
+.css-1mbanyi[aria-selected=true], .css-1mbanyi[data-selected]{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+}
+
+.css-fgp5ep{
+    border-bottom: 1px solid black;
+}
+
+.css-1mbanyi{
+    outline: none;
+    border: none;
 }
 
 

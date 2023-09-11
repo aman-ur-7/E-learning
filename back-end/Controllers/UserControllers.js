@@ -23,6 +23,11 @@ const registerUser = asyncHandler(async (req, res) => {
       throw new Error("must fill the requirements");
     }
 
+    const isUserExist = await AuthModel.findOne({ email });
+    if (isUserExist) {
+      res.status(400).send("Can't use the same email");
+    }
+
     const userRegister = await AuthModel.create({
       name,
       password,

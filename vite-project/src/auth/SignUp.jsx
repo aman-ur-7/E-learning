@@ -1,30 +1,81 @@
 import React, { useState, useEffect } from "react";
 import { VscEye } from "react-icons/vsc";
 import { VscEyeClosed } from "react-icons/vsc";
+import axios from "axios";
+import * as react from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [type, setType] = useState("password");
   const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [intrest, setIntrest] = useState();
+  const [loading, setLoading] = useState(false);
 
   const handleToggle = () => {
     setType((prevType) => (prevType === "password" ? "text" : "password"));
     setShowPassword((password) => !password);
   };
 
-  useEffect(() => {
-    const signUp = (e) => {
-      e.preventDefault();
+  function refreshPage() {
+    window.location.reload(true);
+  }
+
+  const signUp = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    if (!password || !email || !name) {
+      alert("fill the fields first");
+      setTimeout(() => {
+        refreshPage();
+      }, 2000);
+    }
+
+    const passwordRegex = /^[a-zA-Z0-9]*$/;
+
+    if (!passwordRegex.test(password)) {
+      alert("use one uppercase , one lowercase and one digit");
+      setTimeout(() => {
+        refreshPage();
+      }, 2000);
+    }
+
+    const config = {
+      headers: {
+        "Content-type": "application/json",
+      },
     };
 
-    return () => signUp();
-  }, []);
+    try {
+      const respond = await axios.post(
+        "http://localhost:7001/user/register",
+        {
+          name,
+          email,
+          intrest,
+          password,
+        },
+        config
+      );
+
+      if (respond) {
+        setLoading(false);
+        navigate("/login");
+      }
+    } catch (error) {
+      console.log(error);
+      setTimeout(() => {
+        refreshPage();
+      }, 2000);
+    }
+  };
 
   return (
-    <div className="sign-up" onSubmit={""}>
+    <div className="sign-up" onSubmit={signUp}>
       <h1>Welcome To The Sign-up Page</h1>
       <form>
         <section>
@@ -69,7 +120,9 @@ const SignUp = () => {
             />
           </div>
         </section>
-        <button type="submit">submit</button>
+        <react.Button type="submit" isLoading={loading}>
+          submit
+        </react.Button>
       </form>
     </div>
   );
