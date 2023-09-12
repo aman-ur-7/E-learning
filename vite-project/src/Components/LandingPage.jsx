@@ -1,13 +1,30 @@
-import React from "react";
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import slay from "../assets/Saly-10.png";
 import { BsFillMicFill } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 import NumberCounts from "./NumberCounts";
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
+import { BsFillMicMuteFill } from "react-icons/bs";
 
 const LandingPage = () => {
-  const mic = () => {};
-  const search = () => {};
+  const startListening = () => {
+    SpeechRecognition.startListening({
+      continuous: true,
+      language: "en-IN",
+    });
+  };
+  const { transcript, browserSupportsSpeechRecognition } =
+    useSpeechRecognition();
+  if (!browserSupportsSpeechRecognition) {
+    return null;
+  }
+
+  const [isActive, setIsActive] = useState(true);
 
   return (
     <>
@@ -40,15 +57,39 @@ const LandingPage = () => {
               accident,
             </p>
             <div className="search-bar">
-              <input type="text" placeholder="Search" />
-              <BsFillMicFill
-                onClick={mic}
-                className="mic"
-                color="grey"
-                size={33}
+              <input
+                type="text"
+                placeholder="search"
+                value={transcript}
+                onChange={(e) => e.target.value}
               />
+              {/* <BsFillMicMuteFill */}
+              {isActive ? (
+                <BsFillMicMuteFill
+                  className="mic"
+                  color="grey"
+                  size={33}
+                  onClick={() => {
+                    startListening();
+                    setIsActive(!isActive);
+                  }}
+                />
+              ) : (
+                <BsFillMicFill
+                  onClick={() => {
+                    SpeechRecognition.stopListening();
+                    setIsActive(!isActive);
+                  }}
+                  className="mic"
+                  color="grey"
+                  size={33}
+                />
+              )}
+              {/* // onClick={startListening}
+              // className="mic" // color="grey" // size={33} */}
+              {/* /> */}
               <BiSearch
-                onClick={search}
+                // onClick={SpeechRecognition.stopListening}
                 className="search"
                 color="white"
                 size={33.5}

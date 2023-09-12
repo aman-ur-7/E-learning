@@ -502,10 +502,11 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .about-page{
-        padding: 40px 80px;
+        padding: 40px 50px;
         display: flex;
         gap: 50px;
         flex-direction: column;
+
 
         &>:nth-child(1){
 
@@ -648,5 +649,17 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
 }
 
+.course-list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+
+    :hover{
+        color: white;
+    }
+}
 
 `;

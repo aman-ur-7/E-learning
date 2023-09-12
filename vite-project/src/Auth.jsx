@@ -12,7 +12,7 @@ const MainAuth = () => {
             <span>sign-up</span>
           </Tab>
           <Tab>
-            <span>Cources</span>
+            <span>Cources / for teachers</span>
           </Tab>
         </TabList>
         <TabPanels>

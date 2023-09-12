@@ -21,7 +21,7 @@ const AboutPage = () => {
       <div className="swiper-slider">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={50}
+          spaceBetween={-150}
           slidesPerView={4}
           navigation
           pagination={{ clickable: true }}

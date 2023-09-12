@@ -56,4 +56,5 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 });
 
+// const image = asyncHandler();
 module.exports = { registerUser, loginUser };

@@ -37,7 +37,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-App.post("/profile", upload.single("image"), function (req, res, next) {});
+App.use("/uploads", express.static("uploads"));
 //
 App.listen(PORT, () => {
   console.log("server is started");
