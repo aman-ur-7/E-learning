@@ -4,9 +4,13 @@ const dotEnv = require("dotenv");
 const userRoutes = require("./Routes/UserRoutes");
 const cors = require("cors");
 const DataBase = require("./Config/Data");
+
 //
+// App.use(express.static("public"));
+
 const multer = require("multer");
 const path = require("path");
+const FileSchema = require("./Model/FileSchema");
 //
 // App.use();
 App.use(express.json());
@@ -30,14 +34,32 @@ const storage = multer.diskStorage({
     cb(null, "images");
   },
   filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(null, file.fieldname + "-" + uniqueSuffix);
+    cb(
+      null,
+      file.fieldname + "_" + Date.now() + path.extname(file.originalname)
+    );
   },
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({
+  storage: storage,
+});
 
-App.use("/uploads", express.static("uploads"));
+App.post("/uploads", upload.single("file"), async (req, res) => {
+  FileSchema.create({ image: req.file.filename })
+    .then((data) => res.send(data))
+    .catch((e) => res.send(e));
+});
+
+App.get("/image", (req, res) => {
+  FileSchema.find()
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
 //
 App.listen(PORT, () => {
   console.log("server is started");

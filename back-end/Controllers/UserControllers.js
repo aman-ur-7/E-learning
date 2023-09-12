@@ -1,6 +1,6 @@
 const AuthModel = require("../Model/AuthSchema");
 const asyncHandler = require("express-async-handler");
-const ImageSchema = require("../Model/FileSchema");
+const FileSchema = require("../Model/FileSchema");
 
 const registerUser = asyncHandler(async (req, res) => {
   try {
@@ -56,5 +56,12 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 });
 
-// const image = asyncHandler();
+const getImage = asyncHandler(async (req, res) => {
+  try {
+    const gettingImage = await FileSchema.find();
+    res.status(200).send(gettingImage);
+  } catch (error) {
+    res.status(404).send(error);
+  }
+});
 module.exports = { registerUser, loginUser };
