@@ -7,6 +7,20 @@ const ImageSchema = new mongoose.Schema({
   // },
   image: String,
   // name: String,
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+  subject: {
+    type: String,
+    // required: true,
+  },
+  text: {
+    type: String,
+  },
+  language: {
+    type: String,
+  },
 });
 
 const Image = mongoose.model("Image", ImageSchema);

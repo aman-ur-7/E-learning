@@ -675,4 +675,110 @@ export const GlobalStyle = createGlobalStyle`
     }
 }
 
+.courses{
+    background: #E7E9EB;
+    padding: 30px 80px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    &>div{
+
+        &>h1{
+            font-size: 30px;
+            font-weight: 600;
+
+            &>span{
+                color: #3461FD;
+            }
+        }
+
+        &>p{
+            color: grey;
+        }
+    }
+
+    .courses-categories{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        &>div{
+            padding: 8px;
+            background: white;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            border-radius: 12px;
+            width: 210px;
+            justify-content: space-between;
+            cursor: pointer;
+            
+            &>div{
+                display: flex;
+                gap: 8px;
+                align-items: center;
+            }
+
+            &>:nth-child(2){
+                border: 1px solid white;
+                padding: 2px;
+                border-radius: 50%;
+
+                    &:hover {
+                    background: var(--secondary-500, #FFC27A);
+                    color: white;
+                    cursor: pointer;
+    }
+            } 
+
+            &:active{
+                border: 1px solid var(--secondary-500, #FFC27A);
+                box-shadow: 0px 12px 48px 0px rgba(255, 194, 122, 0.26);
+            }
+        }
+    }
+}
+
+.blog{
+    background: #A988F9;
+    .blog-form{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 30px;
+        gap: 10px;
+
+        &>:nth-child(1){
+            width: 300px;
+            color: black;
+            outline: none;
+            background: none;
+            border-bottom: 1px solid white;
+        }
+
+        &>:nth-child(2){
+            width: 300px;
+        }
+
+        textarea{
+            resize: none;
+            outline: none;
+            border: none;
+            background: #e5efe5;
+        }
+
+        .btn{
+            font-weight: 600;
+            font-size: 23px;
+            width: 260px;
+            margin: auto;
+            background: #f47180;
+        }
+    }
+
+}
+
+
 `;
