@@ -502,7 +502,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .about-page{
-        padding: 40px 50px;
+        padding: 40px 80px;
         display: flex;
         gap: 50px;
         flex-direction: column;
@@ -538,6 +538,19 @@ export const GlobalStyle = createGlobalStyle`
             flex-direction: column;
             gap: 8px;
             box-shadow: 0 10px 10px rgba(0, 0, 0, 0.13), 0 13px 16px rgba(0, 0, 0, 0.107);
+
+            &>:nth-child(4){
+                display: flex; 
+                justify-content: space-between;
+
+                &>span{
+                    cursor: pointer;
+                }
+
+                &>:nth-child(2){
+                    color: tomato;
+                }
+            }
 
 
         &>:nth-child(1)>span{

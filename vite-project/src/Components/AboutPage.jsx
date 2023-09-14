@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css";
 // import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Link, NavLink } from "react-router-dom";
 
 const AboutPage = () => {
   return (
@@ -38,7 +39,12 @@ const AboutPage = () => {
                 <p>Various version's are evolve </p>
               </div>
               <hr />
-              <span>Free</span>
+              <div>
+                <NavLink to="/reactjs">Blog</NavLink>
+                <Link to="https://youtu.be/luAkR9VaLcw?si=ZzUcfp7kXrJD4e4e">
+                  Youtube
+                </Link>
+              </div>
             </section>
           </SwiperSlide>
           <SwiperSlide>
@@ -51,7 +57,12 @@ const AboutPage = () => {
                 <p>Various version's are evolve </p>
               </div>
               <hr />
-              <span>Free</span>
+              <div>
+                <NavLink to="/blog">Blog</NavLink>
+                <Link to="https://youtu.be/luAkR9VaLcw?si=ZzUcfp7kXrJD4e4e">
+                  Youtube
+                </Link>
+              </div>
             </section>
           </SwiperSlide>
           <SwiperSlide>
@@ -64,7 +75,12 @@ const AboutPage = () => {
                 <p>Various version's are evolve </p>
               </div>
               <hr />
-              <span>Free</span>
+              <div>
+                <NavLink to="">Blog</NavLink>
+                <Link to="https://youtu.be/luAkR9VaLcw?si=ZzUcfp7kXrJD4e4e">
+                  Youtube
+                </Link>
+              </div>
             </section>
           </SwiperSlide>
           <SwiperSlide>
@@ -77,7 +93,12 @@ const AboutPage = () => {
                 <p>Various version's are evolve </p>
               </div>
               <hr />
-              <span>Free</span>
+              <div>
+                <NavLink to="">Blog</NavLink>
+                <Link to="https://youtu.be/luAkR9VaLcw?si=ZzUcfp7kXrJD4e4e">
+                  Youtube
+                </Link>
+              </div>
             </section>
           </SwiperSlide>
           <SwiperSlide>
@@ -90,7 +111,12 @@ const AboutPage = () => {
                 <p>Various version's are evolve </p>
               </div>
               <hr />
-              <span>Free</span>
+              <div>
+                <NavLink to="">Blog</NavLink>
+                <Link to="https://youtu.be/luAkR9VaLcw?si=ZzUcfp7kXrJD4e4e">
+                  Youtube
+                </Link>
+              </div>
             </section>
           </SwiperSlide>
         </Swiper>

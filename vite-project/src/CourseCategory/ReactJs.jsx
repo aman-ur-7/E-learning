@@ -3,6 +3,7 @@ import axios from "axios";
 
 const ReactJs = () => {
   const [file, setFile] = useState();
+  const [img, setImg] = useState("");
 
   const upload = async () => {
     try {
@@ -18,24 +19,21 @@ const ReactJs = () => {
     }
   };
 
-  // const reveal = async () => {
-  //   try {
-  //     const responds = await axios.get("http://localhost:7001/image");
-  //     setImg(responds.data[0].image);
-  //     console.log(img);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-  // axios
-  //   .get("http://localhost:7001/image")
-  //   .then((result) => {
-  //     console.log(result);
-  //     setImg(result.data[1].image);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+  const getImage = async () => {
+    await axios
+      .get("http://localhost:7001/image")
+      .then((result) => {
+        setImg(result.data[3].image);
+        console.log(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getImage();
+  }, []);
 
   return (
     <div>
@@ -44,13 +42,15 @@ const ReactJs = () => {
         placeholder="upload"
         onChange={(e) => setFile(e.target.files[0])}
       />
-      {/* <img src={`http://localhost:7001/images/` + img} alt="image" /> */}
+      {img ? (
+        <img src={`http://localhost:7001/images/${img}`} alt="image" />
+      ) : (
+        <p>No image available</p>
+      )}
       <button onClick={upload}>upload</button>
-      {/* <button onClick={reveal}>reveal</button> */}
+      <br />
+      <button onClick={getImage}>get</button>
     </div>
-
-    // https://www.youtube.com/watch?v=jfZyqZycjmA
-    // How to Upload and Display Images using Multer in the MERN stack | Upload Images in React JS and Node
   );
 };
 

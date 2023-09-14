@@ -6,7 +6,7 @@ const cors = require("cors");
 const DataBase = require("./Config/Data");
 
 //
-// App.use(express.static("public"));
+App.use(express.static("public"));
 
 const multer = require("multer");
 const path = require("path");
@@ -31,7 +31,7 @@ App.use("/user", userRoutes);
 //
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "images");
+    cb(null, "public/images");
   },
   filename: function (req, file, cb) {
     cb(
@@ -47,17 +47,17 @@ const upload = multer({
 
 App.post("/uploads", upload.single("file"), async (req, res) => {
   FileSchema.create({ image: req.file.filename })
-    .then((data) => res.send(data))
+    .then((data) => res.status(200).send(data))
     .catch((e) => res.send(e));
 });
 
 App.get("/image", (req, res) => {
   FileSchema.find()
     .then((result) => {
-      res.json(result);
+      res.status(200).send(result);
     })
     .catch((err) => {
-      res.json(err);
+      res.send(err);
     });
 });
 //
