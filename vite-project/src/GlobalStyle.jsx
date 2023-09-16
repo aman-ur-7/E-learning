@@ -783,7 +783,53 @@ export const GlobalStyle = createGlobalStyle`
             background: #f47180;
         }
     }
+}
 
+.react-blog{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 60px;
+
+    &>div{
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        padding: 10px 50px;
+
+
+        &>img{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 20px;
+        }
+
+        &>div{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &>span{
+                font-size: 35px;
+                font-weight: 600;
+                color: #3461FD;
+            }
+            &>p{
+                color: #7e7e7e;
+                line-height-step: 3px;
+            }
+            &>h3{
+                font-weight: 600;
+            }
+            hr{
+                height: 3px;
+                background: #FFA337;
+            }
+        }
+
+    }
 }
 
 
