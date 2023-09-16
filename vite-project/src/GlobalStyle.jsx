@@ -743,6 +743,12 @@ export const GlobalStyle = createGlobalStyle`
 
 .blog{
     background: #A988F9;
+    display: flex;
+    flex-direction: column;
+    &>span{
+        font-size: 30px;
+        margin: auto;
+    }
     .blog-form{
         display: flex;
         flex-direction: column;

@@ -49,7 +49,7 @@ App.post("/uploads", upload.single("file"), async (req, res) => {
   FileSchema.create({
     image: req.file.filename,
     subject: req.body.subject,
-    author: req.body.author,
+    language: req.body.author,
     text: req.body.text,
   })
     .then((data) => res.status(200).send(data))

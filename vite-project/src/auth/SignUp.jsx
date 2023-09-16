@@ -112,11 +112,11 @@ const SignUp = () => {
             </div>
           </div>
           <div>
-            <span>User intrest</span>
+            <span>Development intrest</span>
             <input
               type="text"
-              placeholder="User intrest"
-              onChange={(e) => setIntrest(e.target.value)}
+              placeholder="Intrest"
+              onChange={(e) => setIntrest(e.target.value.toLowerCase())}
             />
           </div>
         </section>
