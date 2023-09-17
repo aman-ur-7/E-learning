@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import * as react from "@chakra-ui/react";
+import { ArrowBackIcon } from "@chakra-ui/icons";
+import { useNavigate } from "react-router-dom";
 
-const Blogging = () => {
+const Blogging = (porps) => {
   const [file, setFile] = useState();
   // const [img, setImg] = useState();
   const [subject, setSubject] = useState();
   const [author, setAuthor] = useState();
   const [text, setText] = useState();
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   function refreshPage() {
     window.location.reload(true);
@@ -45,6 +48,11 @@ const Blogging = () => {
     }
   };
 
+  const isBug = porps.toChild;
+  const goBack = () => {
+    navigate("/elearn");
+  };
+
   // const getImage = async () => {
   //   await axios
   //     .get("http://localhost:7001/image")
@@ -63,7 +71,7 @@ const Blogging = () => {
 
   return (
     <div className="blog">
-      <span>Upload Your Blog</span>
+      {isBug ? <span>Upload Your Bug</span> : <span>Upload Your Blog</span>}
       <form className="blog-form" onSubmit={upload}>
         <input
           type="text"
@@ -90,6 +98,14 @@ const Blogging = () => {
         <react.Button className="btn" type="submit" isLoading={loading}>
           upload
         </react.Button>
+        <>
+          <ArrowBackIcon
+            onClick={goBack}
+            boxSize={6}
+            color={"white"}
+            cursor={"pointer"}
+          />
+        </>
         {/* <button onClick={getImage}>get</button> */}
       </form>
     </div>

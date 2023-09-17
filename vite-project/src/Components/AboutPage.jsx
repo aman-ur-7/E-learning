@@ -40,7 +40,7 @@ const AboutPage = () => {
               </div>
               <hr />
               <div>
-                <NavLink to="/reactjs">Blog</NavLink>
+                <NavLink to="/frontend">Blog</NavLink>
                 <Link to="https://youtu.be/luAkR9VaLcw?si=ZzUcfp7kXrJD4e4e">
                   Youtube
                 </Link>
@@ -58,7 +58,7 @@ const AboutPage = () => {
               </div>
               <hr />
               <div>
-                <NavLink to="/blog">Blog</NavLink>
+                <NavLink to="/bugfix">Blog</NavLink>
                 <Link to="https://youtu.be/luAkR9VaLcw?si=ZzUcfp7kXrJD4e4e">
                   Youtube
                 </Link>
@@ -76,7 +76,7 @@ const AboutPage = () => {
               </div>
               <hr />
               <div>
-                <NavLink to="">Blog</NavLink>
+                <NavLink to="/reactjs">Blog</NavLink>
                 <Link to="https://youtu.be/luAkR9VaLcw?si=ZzUcfp7kXrJD4e4e">
                   Youtube
                 </Link>
@@ -94,7 +94,7 @@ const AboutPage = () => {
               </div>
               <hr />
               <div>
-                <NavLink to="">Blog</NavLink>
+                <NavLink to="/backend">Blog</NavLink>
                 <Link to="https://youtu.be/luAkR9VaLcw?si=ZzUcfp7kXrJD4e4e">
                   Youtube
                 </Link>
@@ -112,7 +112,7 @@ const AboutPage = () => {
               </div>
               <hr />
               <div>
-                <NavLink to="">Blog</NavLink>
+                <NavLink to="/business">Blog</NavLink>
                 <Link to="https://youtu.be/luAkR9VaLcw?si=ZzUcfp7kXrJD4e4e">
                   Youtube
                 </Link>
