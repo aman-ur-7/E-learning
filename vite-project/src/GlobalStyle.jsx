@@ -828,9 +828,103 @@ export const GlobalStyle = createGlobalStyle`
                 background: #FFA337;
             }
         }
-
     }
 }
 
+.blog-page{
+    padding: 40px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &>div{
+
+        h1{
+            font-size: 35px;
+            font-weight: 600;
+            
+            &>span{
+                color: #3461FD;
+            }
+        }
+
+        &>p{
+            color: #6D737A;
+        }
+    }
+
+    .swiper-slider{
+        display: flex;
+        justify-content: space-between;
+
+        &>div{
+            padding:10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.07), 0 16px 32px rgba(0,0,0,0.07), 0 32px 64px rgba(0,0,0,0.07);
+            border-radius: 20px;
+
+            &>img{
+                height: 150px;
+                object-fit: contain;
+            }
+            &>span{
+                font-weight: 600;
+            }
+        }
+    } 
+}
+.landing-footer{
+    background: #F8F4FF;
+    padding: 40px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &>:nth-child(1){
+        &>h1{
+            font-size: 35px;
+            font-weight: 600;
+            &>span{
+                color: #3461FD;
+            }
+        }
+        &>p{
+            color: #6D737A;
+        }
+    }
+
+    .feedback-content{
+        background: white;
+        width: 35%;
+        border-radius: 12px;
+        padding: 20px;
+        gap: 30px;
+        display: flex;
+        flex-direction: column;
+
+        &>div{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &>img{
+                height: 50px;
+                border-radius: 50px;
+            }
+            &>div{
+                &>h1{
+                    font-weight: 600;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &>p{
+            color: #363A3D;
+        }
+    }
+}
 
 `;
