@@ -1,13 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AdvertiseComponent from "./AdvertiseComponent";
-// import rcktMan from "../assets/";
 import { BsFacebook } from "react-icons/bs";
 import { RxInstagramLogo } from "react-icons/rx";
 import { RiLinkedinFill } from "react-icons/ri";
 import { BsGithub } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useData } from "../DataContext";
+import axios from "axios";
+import { Button } from "@chakra-ui/react";
+import { EmailIcon } from "@chakra-ui/icons";
+import { useNavigate } from "react-router-dom";
 
 const ContactFooter = () => {
+  const [mail, setMail] = useState();
+  const { dataFromLogin } = useData();
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  function refreshPage() {
+    window.location.reload(true);
+  }
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+    try {
+      const config = {
+        headers: {
+          "Content-type": "application/json",
+        },
+      };
+
+      const respond = await axios.post(
+        "http://localhost:7001/user/email",
+        { mail, dataFromLogin },
+        config
+      );
+      if (respond) {
+        alert("Good for the email");
+        navigate("/*");
+      }
+    } catch (error) {
+      alert("RE login");
+      setTimeout(() => {
+        refreshPage();
+      }, 0);
+    }
+  };
+
   return (
     <section className="contact-footer">
       <div className="advertise">
@@ -88,8 +128,20 @@ const ContactFooter = () => {
               Lorem Ipsum has been them an industry printer took a galley make
               book.
             </p>
-            <input type="text" placeholder="write the experience" />
-            <button>Subscribe Now</button>
+            <input
+              type="text"
+              placeholder="write the experience"
+              onChange={(e) => setMail(e.target.value)}
+            />
+            <Button
+              leftIcon={<EmailIcon />}
+              colorScheme="teal"
+              variant="solid"
+              onClick={sendEmail}
+              isLoading={loading}
+            >
+              Email
+            </Button>
           </div>
         </section>
       </div>

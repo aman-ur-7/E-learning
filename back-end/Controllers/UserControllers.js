@@ -2,6 +2,8 @@ const AuthModel = require("../Model/AuthSchema");
 const asyncHandler = require("express-async-handler");
 const FileSchema = require("../Model/FileSchema");
 
+const nodemailer = require("nodemailer");
+
 const registerUser = asyncHandler(async (req, res) => {
   try {
     const { name, email, password, intrest } = req.body;
@@ -56,12 +58,31 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 });
 
-const getImage = asyncHandler(async (req, res) => {
-  try {
-    const gettingImage = await FileSchema.find();
-    res.status(200).send(gettingImage);
-  } catch (error) {
-    res.status(404).send(error);
-  }
+const emailSender = asyncHandler(async (req, res) => {
+  const { mail, dataFromLogin } = req.body;
+
+  let mailTransporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "canvadesigner77@gmail.com",
+      pass: "rivccwpyzskddjtl",
+    },
+  });
+
+  let mailDetails = {
+    from: "canvadesigner77@gmail.com",
+    to: dataFromLogin.data.email,
+    subject: "Your praiseing",
+    text: mail,
+  };
+
+  mailTransporter.sendMail(mailDetails, function (err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.status(200).send("Email sent successfully");
+    }
+  });
 });
-module.exports = { registerUser, loginUser };
+
+module.exports = { registerUser, loginUser, emailSender };
