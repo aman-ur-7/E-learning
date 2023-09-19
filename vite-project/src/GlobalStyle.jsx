@@ -880,9 +880,13 @@ export const GlobalStyle = createGlobalStyle`
     padding: 40px 80px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
 
-    &>:nth-child(1){
+    &>div{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        &>:nth-child(1){
         &>h1{
             font-size: 35px;
             font-weight: 600;
@@ -895,29 +899,42 @@ export const GlobalStyle = createGlobalStyle`
         }
     }
 
+    &>:nth-child(2){
+        display: flex;
+        gap: 20px;
+    }
+}
     .feedback-content{
         background: white;
         width: 35%;
         border-radius: 12px;
         padding: 20px;
-        gap: 30px;
         display: flex;
         flex-direction: column;
+        gap: 20px;
+        color: var(--gray-700, #363A3D);
 
         &>div{
             display: flex;
             align-items: center;
-            gap: 10px;
+            display: flex;
+            justify-content: space-between;
 
-            &>img{
+            &>div{
+                display: flex;
+                gap: 20px;
+
+                &>img{
                 height: 50px;
                 border-radius: 50px;
-            }
-            &>div{
+                }
+                
+                &>div{
                 &>h1{
                     font-weight: 600;
                     font-size: 18px;
                 }
+            }
             }
         }
 
@@ -927,4 +944,35 @@ export const GlobalStyle = createGlobalStyle`
     }
 }
 
+.contact-footer{
+    display: flex;
+    flex-direction: column;
+
+    .advertise{
+        padding: 40px 80px;
+        display: flex;
+        align-items: center;
+        
+        &>:nth-child(1){
+        }
+        &>div{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            &>h1{
+                font-size: 35px;
+                font-weight: 600;
+                &>span{
+                    color: #3461FD;
+                }
+            }
+        }
+    }
+
+    .contact-page{
+        padding: 40px 80px;
+    }
+}
 `;
