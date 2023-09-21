@@ -1123,4 +1123,44 @@ export const GlobalStyle = createGlobalStyle`
     }
 }
 
+.ai-page{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0px 40px;
+
+    .ai-chats{
+        height: 85vh;
+        overflow: auto;
+
+        &>P>span>b{
+            border: 1px solid red;
+        }
+    }
+    ::-webkit-scrollbar {
+    display: none;
+}
+
+
+    .ai-form{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        &>input{
+            width: 80%;
+            padding: 8px;
+            background: #efefef;
+            border-radius:12px;
+        }
+        
+        .ai-button{
+            width: 10%;
+            padding: 8px;
+            border-radius: 10px;
+        }
+    }
+}
+
+
 `;
