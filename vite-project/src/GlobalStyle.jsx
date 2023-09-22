@@ -1128,13 +1128,39 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     flex-wrap: wrap;
     padding: 0px 40px;
+    background: linear-gradient(135deg, #028090 0%, #02C39A 100%);
+    height: 100vh;
+
 
     .ai-chats{
         height: 85vh;
         overflow: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
 
-        &>P>span>b{
-            border: 1px solid red;
+        .msg-content{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            &>:nth-child(1){
+                color: tomato;
+            }
+        }
+        
+        .user_msg{
+            padding: 8px;
+            border-radius: 15px 15px 0px 15px;
+            color: black;
+            background: #e4e4e4;
+        }
+        .ai{
+            padding: 8px;
+            border-radius: 15px 15px 15px 0px;
+            color: black;
+            background: #cacaca;
         }
     }
     ::-webkit-scrollbar {
@@ -1152,6 +1178,8 @@ export const GlobalStyle = createGlobalStyle`
             padding: 8px;
             background: #efefef;
             border-radius:12px;
+            outline: none;
+            border: none;
         }
         
         .ai-button{
