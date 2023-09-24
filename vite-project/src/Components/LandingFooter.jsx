@@ -1,9 +1,9 @@
 import React from "react";
-import retange1 from "../assets/Rectangle161.png";
 import retange2 from "../assets/Rectangle162.png";
 import retange3 from "../assets/Rectangle163.png";
 import retange4 from "../assets/Rectangle164.png";
-import { FaComments } from "react-icons/fa6";
+import { FaComments, FaRobot } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const LandingFooter = () => {
   return (
@@ -70,6 +70,11 @@ const LandingFooter = () => {
             </p>
           </div>
         </div>
+      </div>
+      <div className="ai-artificial">
+        <Link to="/ai">
+          <FaRobot size={40} />
+        </Link>
       </div>
     </section>
   );

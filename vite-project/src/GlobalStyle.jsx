@@ -1190,5 +1190,18 @@ export const GlobalStyle = createGlobalStyle`
     }
 }
 
+.ai-artificial{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 440px;
+    right: 50px;
+    
+    &>:nth-child(1){
+        color: #0000001e;
+    }
+}
+
 
 `;

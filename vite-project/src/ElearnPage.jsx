@@ -8,8 +8,8 @@ import Blog from "./Components/Blog";
 import Course from "./Components/Course";
 
 const ElearnPage = () => {
-  const { dataFromLogin } = useData("");
-  const [persistedData, setPersistedData] = useState("");
+  // const { dataFromLogin } = useData("");
+  // const [persistedData, setPersistedData] = useState("");
 
   useEffect(() => {
     const storedData = localStorage.getItem("dataToPersist");

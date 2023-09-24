@@ -12,8 +12,8 @@ const Ai = () => {
   const [loading, setLoading] = useState(false);
 
   const configuration = new Configuration({
-    // organization: "org-c4dBBnxjAU4EgYEiKxjYjVjZ",
-    // apiKey: "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",
+    organization: "org-c4dBBnxjAU4EgYEiKxjYjVjZ",
+    apiKey: "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",
   });
   const openai = new OpenAIApi(configuration);
 
